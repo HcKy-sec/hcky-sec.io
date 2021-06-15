@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>HackPack CTF 2021 Write-Ups - HcKy-sec.io</title><meta name="Description" content="HackPack CTF 2021 write-ups"><meta property="og:title" content="HackPack CTF 2021 Write-Ups" />
+<meta property="og:description" content="HackPack CTF 2021 write-ups" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hcky-sec.io/hackpack/" />
+<meta property="og:image" content="https://hcky-sec.io/hackpack/hackpack1.png"/>
+<meta property="article:published_time" content="2021-04-18T21:29:01+08:00" />
+<meta property="article:modified_time" content="2021-04-18T21:29:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hcky-sec.io/hackpack/hackpack1.png"/>
+<meta name="twitter:title" content="HackPack CTF 2021 Write-Ups"/>
+<meta name="twitter:description" content="HackPack CTF 2021 write-ups"/>
+<meta name="application-name" content="HcKy-sec">
+<meta name="apple-mobile-web-app-title" content="HcKy-sec"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hcky-sec.io/hackpack/" /><link rel="prev" href="https://hcky-sec.io/hackpack2021/" /><link rel="next" href="https://hcky-sec.io/hackpoc/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "HackPack CTF 2021 Write-Ups",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hcky-sec.io\/hackpack\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hcky-sec.io\/hackpack\/hackpack1.png",
+                            "width":  743 ,
+                            "height":  117 
+                        }],"genre": "posts","keywords": "Linux, Web, Git, CVE, HTB","wordcount":  85 ,
+        "url": "https:\/\/hcky-sec.io\/hackpack\/","datePublished": "2021-04-18T21:29:01+08:00","dateModified": "2021-04-18T21:29:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hcky-sec.io\/images\/avatar3.jpeg",
+                    "width":  1284 ,
+                    "height":  1293 
+                }},"author": {
+                "@type": "Person",
+                "name": "HcKy"
+            },"description": "HackPack CTF 2021 write-ups"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/ctf/" title="CTF"> CTF Competitions </a><a class="menu-item" href="/posts/" title="CTF write-ups"> Write-ups </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/" title="About Me"> About </a><a class="menu-item" href="/">  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="search for stuff" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="search for stuff" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/ctf/" title="CTF">CTF Competitions</a><a class="menu-item" href="/posts/" title="CTF write-ups">Write-ups</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="About Me">About</a><a class="menu-item" href="/" title=""></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">HackPack CTF 2021 Write-Ups</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HcKy</a></span>&nbsp;<span class="post-category">included in <a href="/categories/write-ups/"><i class="far fa-folder fa-fw"></i>write-ups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-18">2021-04-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;85 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/hackpack/hackpack1.png"
+        data-srcset="/hackpack/hackpack1.png, /hackpack/hackpack1.png 1.5x, /hackpack/hackpack1.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/hackpack1.png"
+        title="HackPack CTF 2021 write-ups" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#eulers-identity">Euler&rsquo;s Identity</a></li>
+    <li><a href="#bf-means-best-friend-right">BF means best friend, right?</a></li>
+    <li><a href="#not-gaming-anymore-in-xmas">&ldquo;N&quot;ot &ldquo;G&quot;am&quot;I&quot;ng a&quot;N&quot;ymore in &ldquo;X&quot;mas</a></li>
+    <li><a href="#aurora">Aurora</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align:center">HackPack CTF 2021</div>
+<h2 id="eulers-identity">Euler&rsquo;s Identity</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="euler.png"
+        data-srcset="/hackpack/euler.png, euler.png 1.5x, /hackpack/euler.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/euler.png"
+        title="euler" /></p>
+<p><strong>MD5 =</strong> d8d540ae49aadd151b96feb4e0ff124f ::: e^<br>
+<strong>SHA1 =</strong> abb07ca45c9e7719e66e766b958d943f561b8de6::: ipi=</p>
+<p><strong>SHA-256 =</strong> c037c03ee627047a85df540c42d59c6b6028841704a7c706feff584a997fd2a3</p>
+<p><strong>SHA1 =</strong>5d3c4e0314c88f970ab3877e983527cf64d86a53</p>
+<p><strong>MD5 =</strong>6bb61e3b7bce0931da574d19d1d82c88</p>
+<p>Each hash can be found by googling known hash websites.</p>
+<p>flag{e^ipi=-1}</p>
+<h2 id="bf-means-best-friend-right">BF means best friend, right?</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="1BF.png"
+        data-srcset="/hackpack/1BF.png, 1BF.png 1.5x, /hackpack/1BF.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/1BF.png"
+        title="BF" /><br>
+<br>
+Reading the file reveals text encoded in brainfuck. Decode it for the flag.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="BF.png"
+        data-srcset="/hackpack/BF.png, BF.png 1.5x, /hackpack/BF.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/BF.png"
+        title="bf" /></p>
+<h2 id="not-gaming-anymore-in-xmas">&ldquo;N&quot;ot &ldquo;G&quot;am&quot;I&quot;ng a&quot;N&quot;ymore in &ldquo;X&quot;mas</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="not.png"
+        data-srcset="/hackpack/not.png, not.png 1.5x, /hackpack/not.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/not.png"
+        title="not" /><br>
+<br>
+Open the site while running burp, change the debug option from zero to one, go the the file location listed in your browser.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp1.png"
+        data-srcset="/hackpack/burp1.png, burp1.png 1.5x, /hackpack/burp1.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/burp1.png"
+        title="burp1" />
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp2.png"
+        data-srcset="/hackpack/burp2.png, burp2.png 1.5x, /hackpack/burp2.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/burp2.png"
+        title="birp2" />
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp3.png"
+        data-srcset="/hackpack/burp3.png, burp3.png 1.5x, /hackpack/burp3.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/burp3.png"
+        title="burp3" /></p>
+<h2 id="aurora">Aurora</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="1aurora.png"
+        data-srcset="/hackpack/1aurora.png, 1aurora.png 1.5x, /hackpack/1aurora.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/1aurora.png"
+        title="aur" />
+<br>
+Run exiftool on the downloaded file.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="aurora.png"
+        data-srcset="/hackpack/aurora.png, aurora.png 1.5x, /hackpack/aurora.png 2x"
+        data-sizes="auto"
+        alt="/hackpack/aurora.png"
+        title="aurw" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-04-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/cve/">CVE</a>,&nbsp;<a href="/tags/htb/">HTB</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/hackpack2021/" class="prev" rel="prev" title="HackPack CTF 2021"><i class="fas fa-angle-left fa-fw"></i>HackPack CTF 2021</a>
+            <a href="/hackpoc/" class="next" rel="next" title="Cyber Apocalypse 2021">Cyber Apocalypse 2021<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"/home/hcky-sec \u0026nbsp;","id-2":"/home/hcky-sec \u0026nbsp;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HESLRD4X4Q', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HESLRD4X4Q" async></script></body>
+</html>

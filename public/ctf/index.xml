@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTFs on HcKy-sec.io</title>
+    <link>https://hcky-sec.io/ctf/</link>
+    <description>Recent content in CTFs on HcKy-sec.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://hcky-sec.io/ctf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>S.H.E.L.L CTF</title>
+      <link>https://hcky-sec.io/ctf/shellctf/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/shellctf/</guid>
+      <description>This past weekend I decided to play around in the SHELL CTF in between working on my capstone project. Didn&amp;rsquo;t have a ton of time but wanted to knock out some forensics challenges. Unfortunately, for whatever reason, forensics in this CTF was more stegonography challenges than anything else. Still fun though.
+Challenges</description>
+    </item>
+    
+    <item>
+      <title>HeroCTF 2021</title>
+      <link>https://hcky-sec.io/ctf/heroctf/</link>
+      <pubDate>Tue, 27 Apr 2021 14:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/heroctf/</guid>
+      <description>Not much of a break from the Hack the Box CTF. HeroCTF was pretty fun. Didn&amp;rsquo;t have much time to poke at the challenges due to the multiple DDOS attacks on their servers over the weekend but from what I&amp;rsquo;ve seen the organizers did a good job.
+Challenge Write-ups</description>
+    </item>
+    
+    <item>
+      <title>Cyber Apocalypse 2021</title>
+      <link>https://hcky-sec.io/ctf/hackpoc/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/hackpoc/</guid>
+      <description>This week our Cybersecurity Club took part in Hack the Box&amp;rsquo;s Cyber Apocalypse 2021 CTF.
+WGU Fowl Owls ended up placing 195/4740 teams.
+Below are the links to the write-ups for the individual challenges.
+Challenges</description>
+    </item>
+    
+    <item>
+      <title>HackPack CTF 2021</title>
+      <link>https://hcky-sec.io/ctf/hackpack2021/</link>
+      <pubDate>Sun, 18 Apr 2021 14:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/hackpack2021/</guid>
+      <description>This weekend was the HackPack CTF for 2021.
+It turns out the time I set aside on Satuday didn&amp;rsquo;t amount too much since the CTF was from 1100EST Friday to 1100EST Saturday.
+The challenges I looked through were pretty fun and I was only able to complete a few in the time I had.
+Challenge Write-ups</description>
+    </item>
+    
+    <item>
+      <title>RITSEC CTF 2021</title>
+      <link>https://hcky-sec.io/ctf/ritsecctf2021/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/ritsecctf2021/</guid>
+      <description>This weekend was the yearly RITSEC CTF so I decided to give it a shot.
+A team was required to sign up but you could register a team with only one player, which is what I did. The CTF took place from Friday to Sunday. Unfortunately I didn&amp;rsquo;t have any time on Sunday so a few of the challenges I though I could get done didn&amp;rsquo;t end up being completed.</description>
+    </item>
+    
+    <item>
+      <title>TraceLabs OSINT CTF</title>
+      <link>https://hcky-sec.io/ctf/osint-ctf/</link>
+      <pubDate>Sat, 20 Feb 2021 14:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/ctf/osint-ctf/</guid>
+      <description>This weekend was my first time competing in TraceLab&amp;rsquo;s OSINT Searchparty, which is a CTF style event.
+I wasn&amp;rsquo;t sure what to really expect going into it since I&amp;rsquo;ve never done one before. The event was brought up in the WGU Cyber Security Club so we actually had two different teams competing. I was the captain of my team devzero and the other team was called The Fowl Owls.</description>
+    </item>
+    
+  </channel>
+</rss>

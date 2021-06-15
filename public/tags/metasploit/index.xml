@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>metasploit - Tag - HcKy-sec.io</title>
+        <link>https://hcky-sec.io/tags/metasploit/</link>
+        <description>metasploit - Tag - HcKy-sec.io</description>
+        <generator>Hugo -- gohugo.io</generator><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</lastBuildDate><atom:link href="https://hcky-sec.io/tags/metasploit/" rel="self" type="application/rss+xml" /><item>
+    <title>Hack the Box - Jewel</title>
+    <link>https://hcky-sec.io/feline/</link>
+    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/feline/</guid>
+    <description><![CDATA[<p>Simple write-up of Jewel - Difficulty : Medium</p>]]></description>
+</item><item>
+    <title>Hack the Box - Lame</title>
+    <link>https://hcky-sec.io/lame/</link>
+    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/lame/</guid>
+    <description><![CDATA[<p>Simple write-up of Lame - Difficulty : Easy</p>]]></description>
+</item></channel>
+</rss>

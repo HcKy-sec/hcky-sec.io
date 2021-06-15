@@ -1,0 +1,91 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - HcKy-sec.io</title>
+        <link>https://hcky-sec.io/posts/</link>
+        <description>All Posts | HcKy-sec.io</description>
+        <generator>Hugo -- gohugo.io</generator><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Jun 2021 14:00:01 &#43;0800</lastBuildDate><atom:link href="https://hcky-sec.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Hack the Box - Delivery</title>
+    <link>https://hcky-sec.io/delivery/</link>
+    <pubDate>Sun, 13 Jun 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/delivery/</guid>
+    <description><![CDATA[<div style="text-align:center">Write-up of Delivery - Difficulty : Medium </div>]]></description>
+</item><item>
+    <title>S.H.E.L.L. CTF - Challenges</title>
+    <link>https://hcky-sec.io/shell/</link>
+    <pubDate>Thu, 10 Jun 2021 21:29:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/shell/</guid>
+    <description><![CDATA[<div style="text-align:center">SHELL CTF Forensic Challenges </div>]]></description>
+</item><item>
+    <title>S.H.E.L.L CTF</title>
+    <link>https://hcky-sec.io/shellctf/</link>
+    <pubDate>Thu, 10 Jun 2021 00:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/shellctf/</guid>
+    <description><![CDATA[This past weekend I decided to play around in the SHELL CTF in between working on my capstone project. Didn&rsquo;t have a ton of time but wanted to knock out some forensics challenges. Unfortunately, for whatever reason, forensics in this CTF was more stegonography challenges than anything else. Still fun though.
+Challenges]]></description>
+</item><item>
+    <title>HeroCTF 2021</title>
+    <link>https://hcky-sec.io/heroctf/</link>
+    <pubDate>Tue, 27 Apr 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/heroctf/</guid>
+    <description><![CDATA[Not much of a break from the Hack the Box CTF. HeroCTF was pretty fun. Didn&rsquo;t have much time to poke at the challenges due to the multiple DDOS attacks on their servers over the weekend but from what I&rsquo;ve seen the organizers did a good job.
+Challenge Write-ups]]></description>
+</item><item>
+    <title>HeroCTF 2021 - Challenges</title>
+    <link>https://hcky-sec.io/heroctfchall/</link>
+    <pubDate>Mon, 26 Apr 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/heroctfchall/</guid>
+    <description><![CDATA[OSINT Find Me Reverse image search the given file. One of the websites states that it is the Portes Mordelaises.
+Social ID #1 Head over to https://tweeterid.com and just put in the HeroCTF handle.
+Social ID #2 Head over to https://tweeterid.com again and just put in the ID instead.
+Transfer Look up the bitcoin transaction ID and find the wallet the transaction went to.
+ProtonDate Look up the email from within Proton Mail and it will show you when the RSA key was created.]]></description>
+</item><item>
+    <title>Cyber Apocalypse 2021 - Challenges</title>
+    <link>https://hcky-sec.io/hackpock/</link>
+    <pubDate>Sat, 24 Apr 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/hackpock/</guid>
+    <description><![CDATA[AlienPhish Unzip the downloadable file and view the slide1.xml.rels file. Inside is a command with some of the text backwards. Flip the text and decode the base64 for the flag.
+Authenticator Open the downloadable file with Ghidra and look through the functions. In the check pin function is a string with a ^9. Take the string to CyberChef and XOR with a key of 9 to get the flag.
+BlitzProp View the website and intecept the traffic with Burp.]]></description>
+</item><item>
+    <title>Cyber Apocalypse 2021</title>
+    <link>https://hcky-sec.io/hackpoc/</link>
+    <pubDate>Sat, 24 Apr 2021 00:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/hackpoc/</guid>
+    <description><![CDATA[This week our Cybersecurity Club took part in Hack the Box&rsquo;s Cyber Apocalypse 2021 CTF.
+WGU Fowl Owls ended up placing 195/4740 teams.
+Below are the links to the write-ups for the individual challenges.
+Challenges]]></description>
+</item><item>
+    <title>HackPack CTF 2021 Write-Ups</title>
+    <link>https://hcky-sec.io/hackpack/</link>
+    <pubDate>Sun, 18 Apr 2021 21:29:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/hackpack/</guid>
+    <description><![CDATA[<div style="text-align:center">HackPack CTF 2021</div>]]></description>
+</item><item>
+    <title>HackPack CTF 2021</title>
+    <link>https://hcky-sec.io/hackpack2021/</link>
+    <pubDate>Sun, 18 Apr 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/hackpack2021/</guid>
+    <description><![CDATA[This weekend was the HackPack CTF for 2021.
+It turns out the time I set aside on Satuday didn&rsquo;t amount too much since the CTF was from 1100EST Friday to 1100EST Saturday.
+The challenges I looked through were pretty fun and I was only able to complete a few in the time I had.
+Challenge Write-ups]]></description>
+</item><item>
+    <title>Hack the Box - Laboratory</title>
+    <link>https://hcky-sec.io/laboratory/</link>
+    <pubDate>Fri, 16 Apr 2021 14:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/laboratory/</guid>
+    <description><![CDATA[<div style="text-align:center">Write-up of Laboratory - Difficulty : Easy </div>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hack the Box - Academy - HcKy-sec.io</title><meta name="Description" content="Hack the Box Academy Write-up"><meta property="og:title" content="Hack the Box - Academy" />
+<meta property="og:description" content="Hack the Box Academy Write-up" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hcky-sec.io/academy/" />
+<meta property="og:image" content="https://hcky-sec.io/academy/academy.png"/>
+<meta property="article:published_time" content="2021-02-27T14:00:01+08:00" />
+<meta property="article:modified_time" content="2021-02-27T14:00:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hcky-sec.io/academy/academy.png"/>
+<meta name="twitter:title" content="Hack the Box - Academy"/>
+<meta name="twitter:description" content="Hack the Box Academy Write-up"/>
+<meta name="application-name" content="HcKy-sec">
+<meta name="apple-mobile-web-app-title" content="HcKy-sec"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hcky-sec.io/academy/" /><link rel="prev" href="https://hcky-sec.io/feline/" /><link rel="next" href="https://hcky-sec.io/passage/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hack the Box - Academy",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hcky-sec.io\/academy\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hcky-sec.io\/academy\/academy.png",
+                            "width":  800 ,
+                            "height":  638 
+                        }],"genre": "posts","keywords": "Linux, Web, Burp, GTFObins, CVE, HTB","wordcount":  988 ,
+        "url": "https:\/\/hcky-sec.io\/academy\/","datePublished": "2021-02-27T14:00:01+08:00","dateModified": "2021-02-27T14:00:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hcky-sec.io\/images\/avatar3.jpeg",
+                    "width":  1284 ,
+                    "height":  1293 
+                }},"author": {
+                "@type": "Person",
+                "name": "HcKy"
+            },"description": "Hack the Box Academy Write-up"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/ctf/" title="CTF"> CTF Competitions </a><a class="menu-item" href="/posts/" title="CTF write-ups"> Write-ups </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/" title="About Me"> About </a><a class="menu-item" href="/">  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="search for stuff" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="search for stuff" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/ctf/" title="CTF">CTF Competitions</a><a class="menu-item" href="/posts/" title="CTF write-ups">Write-ups</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="About Me">About</a><a class="menu-item" href="/" title=""></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hack the Box - Academy</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HcKy</a></span>&nbsp;<span class="post-category">included in <a href="/categories/write-ups/"><i class="far fa-folder fa-fw"></i>write-ups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-27">2021-02-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;988 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/academy/academy.png"
+        data-srcset="/academy/academy.png, /academy/academy.png 1.5x, /academy/academy.png 2x"
+        data-sizes="auto"
+        alt="/academy/academy.png"
+        title="Hack the Box Academy Write-up" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-overview">1. Overview</a></li>
+    <li><a href="#2-recon">2. Recon</a>
+      <ul>
+        <li><a href="#21-nmap">2.1 Nmap</a></li>
+        <li><a href="#22-website">2.2 Website</a>
+          <ul>
+            <li><a href="#221-academyhtb">2.2.1 Academy.htb</a></li>
+            <li><a href="#222-dev-staging-01">2.2.2 Dev-staging-01</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-foothold">3. Foothold</a></li>
+    <li><a href="#4-privilege-escalation">4. Privilege Escalation</a>
+      <ul>
+        <li><a href="#41-first-user">4.1 First user</a></li>
+        <li><a href="#42-second-user">4.2 Second User</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align:center">Write-up of Academy - Difficulty : Easy </div>
+<blockquote>
+<p>Learning Never Exhausts the Mind</p>
+<p>-Leonardo da Vinci</p>
+</blockquote>
+<h2 id="1-overview">1. Overview</h2>
+<p>Academy is a Linux box hosting an educational website.<br>
+There is a form manipulation vulnerability to set yourself as an admin.<br>
+After logging in as admin you are able to exploit a Laravel vulnerability to gain access to the box as www-data.<br>
+An old environment file has some saved passwords that are readable to our user.<br>
+Using that to login as the second user and find another password in the log files.<br>
+Afterwards we&rsquo;re able to use GTFObins to escalate to root.</p>
+<h2 id="2-recon">2. Recon</h2>
+<h3 id="21-nmap">2.1 Nmap</h3>
+<p>As always we start off running a port scan with nmap and we see that ports 22 and 80 are open.
+There is also redirect happening on port 80 to <strong>ht<span>tp://</span>academy.htb</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> nmap -sC -sV -T4 10.129.104.52
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="nmap.png"
+        data-srcset="/academy/nmap.png, nmap.png 1.5x, /academy/nmap.png 2x"
+        data-sizes="auto"
+        alt="/academy/nmap.png"
+        title="nmap" /></p>
+<h3 id="22-website">2.2 Website</h3>
+<h4 id="221-academyhtb">2.2.1 Academy.htb</h4>
+<p>First thing we need to do is add <strong>academy.htb</strong> to our <strong>/etc/hosts</strong> file so we&rsquo;re able to access the website.<br>
+After we do that we can just browse to the website and see what&rsquo;s there.<br>
+The only thing there is a login page and a register page, so after we register with random credentials ( I used test:test123 ) we&rsquo;re able to access the site.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="home.png"
+        data-srcset="/academy/home.png, home.png 1.5x, /academy/home.png 2x"
+        data-sizes="auto"
+        alt="/academy/home.png"
+        title="home" /></p>
+<p>It looks like we&rsquo;re logged in as egre55 but there&rsquo;s not too many useful things to interact with on the site.</p>
+<p>Like most sites we should run <strong>gobuster</strong> or <strong>ffuf</strong> against it to see what other pages there are that we can access.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">gobuster dir -w /opt/SecLists/Discovery/Web-Content/raft-large-words.txt -u http://academy.htb/ -x php 
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="gobuster.png"
+        data-srcset="/academy/gobuster.png, gobuster.png 1.5x, /academy/gobuster.png 2x"
+        data-sizes="auto"
+        alt="/academy/gobuster.png"
+        title="gobuster" /></p>
+<p>We can see that there&rsquo;s an <strong>/admin.php</strong> page. If we go there it&rsquo;s just a normal login page and the credentials for the account we created earlier don&rsquo;t appear to let us in.<br>
+Let&rsquo;s go back to that first register page and take a closer look at what&rsquo;s going on with <strong>Burp</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp.png"
+        data-srcset="/academy/burp.png, burp.png 1.5x, /academy/burp.png 2x"
+        data-sizes="auto"
+        alt="/academy/burp.png"
+        title="burp" /></p>
+<p>If we change the role id from a 0 to a 1 it may give us a different role type for our account</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="burp3.png"
+        data-srcset="/academy/burp3.png, burp3.png 1.5x, /academy/burp3.png 2x"
+        data-sizes="auto"
+        alt="/academy/burp3.png"
+        title="burptoo" /></p>
+<p>With this new account let&rsquo;s go back and see if we can login to that admin site.<br>
+After logging in as admin there is a to-do list that we can look at.  At the bottom of the list it looks like there&rsquo;s another website that we can access at <strong>dev-staging-01.academy.htb</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="admin.png"
+        data-srcset="/academy/admin.png, admin.png 1.5x, /academy/admin.png 2x"
+        data-sizes="auto"
+        alt="/academy/admin.png"
+        title="admin" /></p>
+<p>Time to go back and add that new site to our <strong>/etc/hosts</strong> file like we did at the start.</p>
+<h4 id="222-dev-staging-01">2.2.2 Dev-staging-01</h4>
+<p>After we navigate to <strong>dev-staging-01.academy.htb</strong> we can see multiple errors being thrown at us for this staging site. If we look through some of them we see some mentions of <strong>Laravel</strong> which is our path to a foothold.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="larevel.png"
+        data-srcset="/academy/larevel.png, larevel.png 1.5x, /academy/larevel.png 2x"
+        data-sizes="auto"
+        alt="/academy/larevel.png"
+        title="laravel" /></p>
+<p>Doing some research we wind up at <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-15133" target="_blank" rel="noopener noreffer">CVE-2018-15133</a>.  This vulnerabiltiy allows for remote code execution as a result of an unserialize call on a potentially untrusted X-XSRF-TOKEN value.<br>
+This vulnerability requires us to know the application key and thankfully for us it was divulged in the previous step.<br>
+Luckily there&rsquo;s also a Metasploit module for this specific exploit.</p>
+<h2 id="3-foothold">3. Foothold</h2>
+<p>After we start up Metasploit we can use the exploit <strong>/unix/http/laravel_token_unserialize_exec</strong>.<br>
+Once we fill out all the required option, ensuring that we copy the <strong>APP_KEY</strong> from the prior step, and put in the correct vhost we can just type <strong>run</strong> and let Metasploit do its thing.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="msf.png"
+        data-srcset="/academy/msf.png, msf.png 1.5x, /academy/msf.png 2x"
+        data-sizes="auto"
+        alt="/academy/msf.png"
+        title="msf" /></p>
+<p>Looks like it was able to come back with a shell as www-data.</p>
+<h2 id="4-privilege-escalation">4. Privilege Escalation</h2>
+<h3 id="41-first-user">4.1 First user</h3>
+<p>We ran <a href="https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS" target="_blank" rel="noopener noreffer">LinPEAS</a> to see if there was any easy avenue for escalation but from what it looked like there wasn&rsquo;t.  After doing some manual poking around in the default directories we found <strong>/var/www/html/academy/.env</strong> which had a saved password in there for a MySQL database.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="env.png"
+        data-srcset="/academy/env.png, env.png 1.5x, /academy/env.png 2x"
+        data-sizes="auto"
+        alt="/academy/env.png"
+        title="env" /></p>
+<p>Well we have a password, so let&rsquo;s run <strong>getent passwd</strong> and maybe <strong>ls /home</strong> to see what users on the box and who has a home directory.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="getent.png"
+        data-srcset="/academy/getent.png, getent.png 1.5x, /academy/getent.png 2x"
+        data-sizes="auto"
+        alt="/academy/getent.png"
+        title="getent" /></p>
+<p>After trying the password on a few accounts we found that it was the correct login for the user <strong>cry0l1t3</strong>.  Since we have the password we can just SSH in as that user.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="sshcry0.png"
+        data-srcset="/academy/sshcry0.png, sshcry0.png 1.5x, /academy/sshcry0.png 2x"
+        data-sizes="auto"
+        alt="/academy/sshcry0.png"
+        title="ssh" /></p>
+<p><strong>Cry0l1t3</strong> happens to be the user with the user flag in their home directory so we can easily grab that on our way to root.</p>
+<h3 id="42-second-user">4.2 Second User</h3>
+<p>After doing some more enumeration as <strong>Cry0l1t3</strong> we can see that he&rsquo;s a member of the <strong>adm</strong> group which is the group that has read access to the log files in <strong>/var/log</strong>.  If we take a look in there and spend some time perusing the files we wind up at <strong>/var/log/audit/audit.log.3</strong> where an <strong>su</strong> command was executed and some data was captured in hexadecimal form.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="audit.png"
+        data-srcset="/academy/audit.png, audit.png 1.5x, /academy/audit.png 2x"
+        data-sizes="auto"
+        alt="/academy/audit.png"
+        title="audit" /></p>
+<p>We can take that hex string to any number of online decoders and it will come back as <strong>mrb3n_Ac@d3my!</strong>.  Looks like this is the password for mrb3n.  We can just do a simple ** su - mrb3n** to switch over to our newly acquired user account.</p>
+<p>Thankfully mrb3n is able to use the sudo command. So let&rsquo;s list what he can do with it with a <strong>sudo -l</strong> command. Looks like he&rsquo;s able to run composer as root.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="sudo.png"
+        data-srcset="/academy/sudo.png, sudo.png 1.5x, /academy/sudo.png 2x"
+        data-sizes="auto"
+        alt="/academy/sudo.png"
+        title="sudo" /></p>
+<p>Easy enough, let&rsquo;s hop over to <a href="https://gtfobins.github.io/" target="_blank" rel="noopener noreffer">GTFObins</a> once again and see what it has for composer. We can run the below command and hop over to root to grab the root flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">TF</span><span class="o">=</span><span class="k">$(</span>mktemp -d<span class="k">)</span>
+<span class="nb">echo</span> <span class="s1">&#39;{&#34;scripts&#34;:{&#34;x&#34;:&#34;/bin/sh -i 0&lt;&amp;3 1&gt;&amp;3 2&gt;&amp;3&#34;}}&#39;</span> &gt;<span class="nv">$TF</span>/composer.json
+sudo composer --working-dir<span class="o">=</span><span class="nv">$TF</span> run-script x
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="root.png"
+        data-srcset="/academy/root.png, root.png 1.5x, /academy/root.png 2x"
+        data-sizes="auto"
+        alt="/academy/root.png"
+        title="root" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<ol>
+<li>Ensure your registration procedures are secure.  There&rsquo;s no reason for someone to be able to self-register as an admin. The creator of the site, or current admins, can create additional accounts for new people.</li>
+<li>Update your software. This CVE was relatively old at the time of use so an administrator should have had more than enough time to update their systems.</li>
+<li>Don&rsquo;t re-use passwords accross multiple accounts.</li>
+<li>Ensure you protect audit logs correctly as they normally hold valuable information.</li>
+</ol>
+<br>
+<br>
+<br>
+<div style="text-align:center"><a href="https://www.hackthebox.eu/home/users/profile/190484"><img src="https://www.hackthebox.eu/badge/image/190484"></a></div>
+<div style="text-align:center">If this write-up was helpful consider leaving some respect on my HTB profile.</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-02-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/burp/">Burp</a>,&nbsp;<a href="/tags/gtfobins/">GTFObins</a>,&nbsp;<a href="/tags/cve/">CVE</a>,&nbsp;<a href="/tags/htb/">HTB</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/feline/" class="prev" rel="prev" title="Hack the Box - Feline"><i class="fas fa-angle-left fa-fw"></i>Hack the Box - Feline</a>
+            <a href="/passage/" class="next" rel="next" title="Hack the Box - Passage">Hack the Box - Passage<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"/home/hcky-sec \u0026nbsp;","id-2":"/home/hcky-sec \u0026nbsp;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HESLRD4X4Q', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HESLRD4X4Q" async></script></body>
+</html>

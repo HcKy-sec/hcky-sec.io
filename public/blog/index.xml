@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on HcKy-sec.io</title>
+    <link>https://hcky-sec.io/blog/</link>
+    <description>Recent content in Blogs on HcKy-sec.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://hcky-sec.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RITSEC CTF 2021</title>
+      <link>https://hcky-sec.io/blog/ritsecctf2021/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/blog/ritsecctf2021/</guid>
+      <description>This weekend was the yearly RITSEC CTF so I decided to give it a shot.
+A team was required to sign up but you could register a team with only one player, which is what I did. The CTF took place from Friday to Sunday. Unfortunately I didn&amp;rsquo;t have any time on Sunday so a few of the challenges I though I could get done didn&amp;rsquo;t end up being completed.</description>
+    </item>
+    
+    <item>
+      <title>TraceLabs OSINT CTF</title>
+      <link>https://hcky-sec.io/blog/osint-ctf/</link>
+      <pubDate>Sat, 20 Feb 2021 14:00:01 +0800</pubDate>
+      
+      <guid>https://hcky-sec.io/blog/osint-ctf/</guid>
+      <description>This weekend was my first time competing in TraceLab&amp;rsquo;s OSINT Searchparty, which is a CTF style event.
+I wasn&amp;rsquo;t sure what to really expect going into it since I&amp;rsquo;ve never done one before. The event was brought up in the WGU Cyber Security Club so we actually had two different teams competing. I was the captain of my team devzero and the other team was called The Fowl Owls.</description>
+    </item>
+    
+  </channel>
+</rss>

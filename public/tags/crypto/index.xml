@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Crypto - Tag - HcKy-sec.io</title>
+        <link>https://hcky-sec.io/tags/crypto/</link>
+        <description>Crypto - Tag - HcKy-sec.io</description>
+        <generator>Hugo -- gohugo.io</generator><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Apr 2021 00:00:01 &#43;0800</lastBuildDate><atom:link href="https://hcky-sec.io/tags/crypto/" rel="self" type="application/rss+xml" /><item>
+    <title>RITSEC CTF 2021</title>
+    <link>https://hcky-sec.io/ritsecctf2021/</link>
+    <pubDate>Mon, 12 Apr 2021 00:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/ritsecctf2021/</guid>
+    <description><![CDATA[This weekend was the yearly RITSEC CTF so I decided to give it a shot.
+A team was required to sign up but you could register a team with only one player, which is what I did. The CTF took place from Friday to Sunday. Unfortunately I didn&rsquo;t have any time on Sunday so a few of the challenges I though I could get done didn&rsquo;t end up being completed.]]></description>
+</item></channel>
+</rss>

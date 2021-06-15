@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>RITSEC CTF 2021 - Intel - HcKy-sec.io</title><meta name="Description" content="RITSEC CTF 2021 - Intel"><meta property="og:title" content="RITSEC CTF 2021 - Intel" />
+<meta property="og:description" content="RITSEC CTF 2021 - Intel" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hcky-sec.io/ritsec2021-intel/" />
+<meta property="og:image" content="https://hcky-sec.io/ritsec2021-intel/ritsec.png"/>
+<meta property="article:published_time" content="2021-04-12T00:00:01+08:00" />
+<meta property="article:modified_time" content="2021-04-12T00:00:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hcky-sec.io/ritsec2021-intel/ritsec.png"/>
+<meta name="twitter:title" content="RITSEC CTF 2021 - Intel"/>
+<meta name="twitter:description" content="RITSEC CTF 2021 - Intel"/>
+<meta name="application-name" content="HcKy-sec">
+<meta name="apple-mobile-web-app-title" content="HcKy-sec"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hcky-sec.io/ritsec2021-intel/" /><link rel="prev" href="https://hcky-sec.io/ritsec2021-misc/" /><link rel="next" href="https://hcky-sec.io/ritsec2021-forensics/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "RITSEC CTF 2021 - Intel",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hcky-sec.io\/ritsec2021-intel\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hcky-sec.io\/ritsec2021-intel\/ritsec.png",
+                            "width":  1038 ,
+                            "height":  454 
+                        }],"genre": "posts","wordcount":  217 ,
+        "url": "https:\/\/hcky-sec.io\/ritsec2021-intel\/","datePublished": "2021-04-12T00:00:01+08:00","dateModified": "2021-04-12T00:00:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hcky-sec.io\/images\/avatar3.jpeg",
+                    "width":  1284 ,
+                    "height":  1293 
+                }},"author": {
+                "@type": "Person",
+                "name": "HcKy"
+            },"description": "RITSEC CTF 2021 - Intel"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/ctf/" title="CTF"> CTF Competitions </a><a class="menu-item" href="/posts/" title="CTF write-ups"> Write-ups </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/" title="About Me"> About </a><a class="menu-item" href="/">  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="search for stuff" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HcKy-sec.io"><span class="header-title-pre"><i class=''></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="search for stuff" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/ctf/" title="CTF">CTF Competitions</a><a class="menu-item" href="/posts/" title="CTF write-ups">Write-ups</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="About Me">About</a><a class="menu-item" href="/" title=""></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">RITSEC CTF 2021 - Intel</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HcKy</a></span>&nbsp;<span class="post-category">included in <a href="/categories/write-ups/"><i class="far fa-folder fa-fw"></i>write-ups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;217 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/ritsec2021-intel/ritsec.png"
+        data-srcset="/ritsec2021-intel/ritsec.png, /ritsec2021-intel/ritsec.png 1.5x, /ritsec2021-intel/ritsec.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/ritsec.png"
+        title="RITSEC CTF 2021 - Intel" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-geno">Finding Geno</a></li>
+    <li><a href="#data-breach">Data Breach</a></li>
+    <li><a href="#music-signs">Music Signs</a></li>
+    <li><a href="#osint-challenge">OSINT Challenge</a></li>
+    <li><a href="#apt-interference">APT Interference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align:center">RITSEC CTF 2021 - Intel </div>
+<h2 id="finding-geno">Finding Geno</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="find.png"
+        data-srcset="/ritsec2021-intel/find.png, find.png 1.5x, /ritsec2021-intel/find.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/find.png"
+        title="1597" /><br>
+<br>
+Just do a google search for Geno and Bridgewater and you&rsquo;ll find his LinkedIn page.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="find1.png"
+        data-srcset="/ritsec2021-intel/find1.png, find1.png 1.5x, /ritsec2021-intel/find1.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/find1.png"
+        title="find" /></p>
+<h2 id="data-breach">Data Breach</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="breach.png"
+        data-srcset="/ritsec2021-intel/breach.png, breach.png 1.5x, /ritsec2021-intel/breach.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/breach.png"
+        title="breach" /><br>
+Geno has his email publicly viewable on the about me portion of his LinkedIn profile. Google search for that email and you&rsquo;ll wind up at a email/password dump site.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="breach1.png"
+        data-srcset="/ritsec2021-intel/breach1.png, breach1.png 1.5x, /ritsec2021-intel/breach1.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/breach1.png"
+        title="breah" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="breach2.png"
+        data-srcset="/ritsec2021-intel/breach2.png, breach2.png 1.5x, /ritsec2021-intel/breach2.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/breach2.png"
+        title="breach" /></p>
+<h2 id="music-signs">Music Signs</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="music.png"
+        data-srcset="/ritsec2021-intel/music.png, music.png 1.5x, /ritsec2021-intel/music.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/music.png"
+        title="music" /><br>
+<br>
+If you go to Geno&rsquo;s twitter page you can see he only has a couple people following him. One of them is Claire Eng. Click the Spotify link on her Twitter page and the flag is the first letter of each song in her only playlist.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="music2.png"
+        data-srcset="/ritsec2021-intel/music2.png, music2.png 1.5x, /ritsec2021-intel/music2.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/music2.png"
+        title="music" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="music3.png"
+        data-srcset="/ritsec2021-intel/music3.png, music3.png 1.5x, /ritsec2021-intel/music3.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/music3.png"
+        title="music" /></p>
+<h2 id="osint-challenge">OSINT Challenge</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="osint.png"
+        data-srcset="/ritsec2021-intel/osint.png, osint.png 1.5x, /ritsec2021-intel/osint.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/osint.png"
+        title="osint" /><br>
+<br>
+Check the other employees of Bridgewater Investigations on LinkedIn and you&rsquo;ll find the CEO is JoAnne Turner-Frey. Google her name or search it on Twitter and you can find her account easily. To find the park name I just googled her location from LinkedIn and peace park. The flag is the name of the park.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="osint2.png"
+        data-srcset="/ritsec2021-intel/osint2.png, osint2.png 1.5x, /ritsec2021-intel/osint2.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/osint2.png"
+        title="osing" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="osint3.png"
+        data-srcset="/ritsec2021-intel/osint3.png, osint3.png 1.5x, /ritsec2021-intel/osint3.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/osint3.png"
+        title="osint" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="osint4.png"
+        data-srcset="/ritsec2021-intel/osint4.png, osint4.png 1.5x, /ritsec2021-intel/osint4.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/osint4.png"
+        title="osint" /></p>
+<h2 id="apt-interference">APT Interference</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="apt.png"
+        data-srcset="/ritsec2021-intel/apt.png, apt.png 1.5x, /ritsec2021-intel/apt.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/apt.png"
+        title="apt" /><br>
+<br>
+Claire&rsquo;s Twitter page from the previous challenge had a bitcoin address in it. Put the address into blockchain.com and you&rsquo;ll be able to see any recent transactions. She was recently paid by someone so we can take their bitcoin address and google it. We wind up at a website advertising the wallet for the government of Ackaria.<br>
+<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="apt2.png"
+        data-srcset="/ritsec2021-intel/apt2.png, apt2.png 1.5x, /ritsec2021-intel/apt2.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/apt2.png"
+        title="apt" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="apt3.png"
+        data-srcset="/ritsec2021-intel/apt3.png, apt3.png 1.5x, /ritsec2021-intel/apt3.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/apt3.png"
+        title="apt" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="apt4.png"
+        data-srcset="/ritsec2021-intel/apt4.png, apt4.png 1.5x, /ritsec2021-intel/apt4.png 2x"
+        data-sizes="auto"
+        alt="/ritsec2021-intel/apt4.png"
+        title="apt" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-04-12</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ritsec2021-misc/" class="prev" rel="prev" title="RITSEC CTF 2021 - Misc/Web/Crypto"><i class="fas fa-angle-left fa-fw"></i>RITSEC CTF 2021 - Misc/Web/Crypto</a>
+            <a href="/ritsec2021-forensics/" class="next" rel="next" title="RITSEC CTF 2021 - Forensics">RITSEC CTF 2021 - Forensics<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"/home/hcky-sec \u0026nbsp;","id-2":"/home/hcky-sec \u0026nbsp;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HESLRD4X4Q', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HESLRD4X4Q" async></script></body>
+</html>

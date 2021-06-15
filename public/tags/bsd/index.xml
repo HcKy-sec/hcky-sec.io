@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>BSD - Tag - HcKy-sec.io</title>
+        <link>https://hcky-sec.io/tags/bsd/</link>
+        <description>BSD - Tag - HcKy-sec.io</description>
+        <generator>Hugo -- gohugo.io</generator><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 27 Mar 2021 21:29:01 &#43;0800</lastBuildDate><atom:link href="https://hcky-sec.io/tags/bsd/" rel="self" type="application/rss+xml" /><item>
+    <title>Hack the Box - Luanne</title>
+    <link>https://hcky-sec.io/luanne/</link>
+    <pubDate>Sat, 27 Mar 2021 21:29:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hcky-sec.io/luanne/</guid>
+    <description><![CDATA[<div style="text-align:center">Write-up of Luanne - Difficulty : Easy </div>]]></description>
+</item></channel>
+</rss>

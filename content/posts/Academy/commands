@@ -1,0 +1,2 @@
+gobuster dir -w /opt/SecLists/Discovery/Web-Content/raft-large-words.txt -
+u http://academy.htb/ -x php  
