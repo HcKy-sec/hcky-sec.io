@@ -13,7 +13,7 @@ resources:
   src: "hackpack1.png"
   
   
-tags: ["Linux", "Web", "Git", "CVE", "HTB"]
+tags: []
 categories: ["write-ups"]
 
 lightgallery: true
