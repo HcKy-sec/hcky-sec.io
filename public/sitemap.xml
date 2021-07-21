@@ -2,10 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hcky-sec.io/delivery/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/shell/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/ctf/shellctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/shellctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hcky-sec.io/delivery/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/shell/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/ctf/shellctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/shellctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/ctf/heroctf/</loc><lastmod>2021-04-27T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/heroctf/</loc><lastmod>2021-04-27T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/heroctfchall/</loc><lastmod>2021-04-26T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -28,22 +28,22 @@
             <loc>https://hcky-sec.io/ctf/osint-ctf/</loc><lastmod>2021-02-20T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/osint-ctf/</loc><lastmod>2021-02-20T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/jewel/</loc><lastmod>2021-02-15T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hcky-sec.io/categories/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/hashcat/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/htb/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/linux/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/posts/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/web/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/categories/write-ups/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/stego/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/zsteg/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/categories/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hcky-sec.io/tags/cve/</loc><lastmod>2021-04-18T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hcky-sec.io/tags/git/</loc><lastmod>2021-04-18T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/categories/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/hashcat/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/htb/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/linux/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/posts/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/web/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/categories/write-ups/</loc><lastmod>2021-06-13T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/stego/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/zsteg/</loc><lastmod>2021-06-10T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/categories/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/ctf/</loc><lastmod>2021-06-10T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/tags/osint/</loc><lastmod>2021-04-18T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/cve/</loc><lastmod>2021-04-16T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hcky-sec.io/tags/git/</loc><lastmod>2021-04-16T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/tags/gitlab/</loc><lastmod>2021-04-16T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/tags/path-injection/</loc><lastmod>2021-04-16T14:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hcky-sec.io/tags/crypto/</loc><lastmod>2021-04-12T00:00:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
